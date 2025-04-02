@@ -29,12 +29,20 @@ var devices = [
         fecha_de_novedad: '2025-03-03 15:42',
     },
     {
-        nombre: 'Lorraine',
+        nombre: 'Sofia',
         articulo: 'Schugel',
         tipo_de_novedad: '25',
         novedad: 'Moana',
         articulo: '',
         fecha_de_novedad: '2025-03-03 9:40',
+    },
+    {
+        nombre: 'sofia',
+        articulo: 'Schugel',
+        tipo_de_novedad: '25',
+        novedad: 'Moana',
+        articulo: '',
+        fecha_de_devolucion: '2025-03-03 12:49',
     },
 ];
 //#endregion
@@ -135,31 +143,54 @@ function updateCarousel(index) {
 }
 //#endregion
 
-//funciones de profile//
-document.addEventListener('DOMContentLoaded', (event) => {
-    const modal = document.getElementById("editProfileModal");
-    const btn = document.getElementById("editProfileBtn");
-    const span = document.getElementsByClassName("close")[0];
-
-    btn.onclick = function() {
-        modal.style.display = "block";
+//#region DOM :: Render
+function Devide_render() {
+    //forof
+    for (const element of devices) {
+        $('#devices').append(`
+            <div class="row">
+              <span class="value">${element.nombre}</span>
+              <span class="value">${element.articulo}</span>
+              <span class="value">${element.tipo_de_novedad}</span>
+              <span class="value">${element.novedad}</span>
+              <span class="value">${element.fecha_de_novedad}</span>
+             
+              
+            </div> 
+        `)
     }
-
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
+    $('#devices-amount').text(devices.length);
+}
+//#endregion
+document.getElementById('img').addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById('profile').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
     }
 });
 
+// Obtener elementos
+const modal = document.getElementById("modal");
+const openModal = document.getElementById("openModal");
+const closeModal = document.getElementById("closeModal");
 
+// Abrir modal
+openModal.onclick = () => {
+    modal.style.display = "flex";
+};
 
+// Cerrar modal al hacer clic en el botón de cerrar
+closeModal.onclick = () => {
+    modal.style.display = "none";
+};
 
-
-
-
-
+// Cerrar modal si se hace clic fuera del contenido
+window.onclick = (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+};
