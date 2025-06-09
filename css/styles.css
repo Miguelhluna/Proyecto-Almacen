@@ -1,0 +1,1438 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+  display: grid;
+    min-height: 100dvh;
+    grid-template-rows:auto ;
+
+}
+
+/*---header---*/
+header {
+    display: flex;
+    height: 15vh;
+    width: 100%;
+    background-color: #28a745;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    position: fixed;
+    z-index: 1;
+    margin-bottom: 0;
+}
+
+/* Imágenes del logo */
+.sena {
+    display: flex;
+    align-items: center;
+    width: 20vh;
+    height: auto;
+    max-height: 13vh;
+
+}
+
+.tittle {
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0 0;
+}
+
+p {
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    font-size: 1.8rem;
+    margin: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* ===== RESPONSIVIDAD ===== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .sena {
+        width: 20vw;
+        height: 10vh;
+        place-content: center;
+    }
+
+    .tittle {
+        font-size: 3rem;
+        margin: 0 0;
+    }
+
+    p {
+        font-size: 2rem;
+        margin: 5px 0;
+    }
+}
+
+.foto-redonda {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 5px;
+}
+
+/* Bienvenida */
+.menu .bienvenida {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+/* Menú base */
+.menu {
+    position: fixed;
+    width: 100%;
+    background-color: lightgray;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 6.9%;
+    padding: 5px;
+}
+
+.menu ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 8px 8px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+/* Botones dentro del menú */
+.menu button {
+    border: none;
+    background: none;
+    font-weight: bold;
+}
+
+.menu button:hover,
+.menu ul li a:hover {
+    background: linear-gradient(50deg, #28a745, #9dc08b);
+    color: white;
+    border-radius: 30px;
+}
+
+.dropmenu-toggle {
+    visibility: hidden;
+    /* Mostrar el botón */
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* Lo coloca a la derecha */
+    padding: 5px;
+}
+
+/* RESPONSIVE: Dropmenu para móviles */
+@media (max-width: 650px) {
+    .dropmenu-toggle {
+        visibility: visible;
+        color: black;
+        margin-top: 20%;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        background: none;
+    }
+
+    .menu ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #f5f5f5;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu ul.show {
+        display: flex;
+    }
+
+    .menu .bienvenida {
+        order: 1;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+@media(max-width: 400px) {
+    .dropmenu-toggle {
+        margin-top: 50%;
+    }
+}   
+@media  (max-width: 350px) {
+  .menu{
+    margin-top: 10%;
+  }          
+
+}
+.register1 {
+    border-radius: 10px;
+    font-size: 25px;
+    background-color: white;
+    color: #28a745;
+    border: #28a745 2px solid;
+    text-shadow: 1px 1px 1px #7d7d7d;
+    box-shadow: 0 5px 5px #333333a6;
+    margin: auto;
+    width: 25%;
+    min-width: 200px;
+    max-width: 90%;
+    display: block;
+    margin-top: 15%;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#register {
+    border-radius: 10px;
+    font-size: 25px;
+    background-color: white;
+    color: #28a745;
+    border: #28a745 2px solid;
+    text-shadow: 1px 1px 1px #7d7d7d;
+    box-shadow: 0 5px 5px #333333a6;
+    margin: auto;
+    width: 25%;
+    min-width: 200px;
+    max-width: 90%;
+    display: block;
+    margin-top: 3%;
+
+    text-align: center;
+}
+
+.register1:hover {
+    background: linear-gradient(50deg, #28a745, #9dc08b);
+    color: white;
+    transform: scale(1.1) translateY(-3px);
+    transition: all 0.4s ease;
+}
+
+.btnequipos {
+    background-color: white;
+    color: #28a745;
+    border: #28a745 2px solid;
+    border-radius: 10px;
+    text-shadow: 1px 1px 1px #7d7d7d;
+    box-shadow: 0 5px 5px #333333a6;
+    margin: auto;
+    width: 25%;
+    min-width: 200px;
+    max-width: 90%;
+    display: block;
+    margin-top: 15%;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 25px;
+    padding: 2px 5px;
+}
+
+.btnequipos:hover {
+    background: linear-gradient(50deg, #28a745, #9dc08b);
+    color: white;
+    transform: scale(1.1) translateY(-3px);
+    transition: all 0.4s ease;
+}
+
+#register:hover {
+    background: linear-gradient(50deg, #28a745, #9dc08b);
+    color: white;
+    transform: scale(1.1) translateY(-3px);
+    transition: all 0.4s ease;
+}
+
+/* Responsivo extra */
+@media (max-width: 650px) {
+
+    .register1,
+    #register {
+        font-size: 20px;
+        width: 80%;
+        margin-top: 40%;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .register1,
+    #register {
+        font-size: 18px;
+        width: 90%;
+        margin-top: 65%;
+    }
+}
+
+
+/*------Tablas--------*/
+.tabla1 {
+    margin: auto;
+    width: 98%;
+    max-width: 100%;
+    overflow-x: auto;
+    /* permite hacer scroll horizontal si la tabla es muy ancha */
+    box-shadow: #3b3b3b7e 0 10px 10px 10px;
+    border-radius: 30px;
+    display: block;
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
+
+/* Asegurar que las tablas dentro respondan correctamente */
+.tabla1 table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+/* Botón de cerrar */
+.close-btn {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    text-shadow: #3b3b3b 0 3px 3px;
+}
+
+.close-btn:hover {
+    color: red;
+    transition: all 0.3s ease;
+    /* Efecto de transición */
+}
+
+#pop {
+    padding: 10px;
+    text-align: center;
+
+    border-radius: 9px;
+    border: none;
+    font-size: 15px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 10px 10px rgba(66, 66, 66, 0.329);
+    display: none;
+    margin: 0 auto;
+    background-color: white;
+    z-index: 99;
+    position: absolute;
+    top: 10vh;
+    /* Ajuste para que esté debajo del header y menú */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.casillas input {
+    border-radius: 9px;
+    border: 1px solid rgba(63, 62, 62, 0.541);
+    padding: 10px;
+    width: 100%;
+    max-width: 250px;
+    margin: 10px auto;
+    display: block;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+#Listo {
+    background: #28a745;
+    color: white;
+    width: 100px;
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px auto 0;
+    display: block;
+    cursor: pointer;
+}
+
+#img {
+    display: none;
+}
+
+#cambiar {
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+    background: linear-gradient(50deg, #28a745, #9DC08B);
+    text-align: center;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 13px;
+    letter-spacing: 1px;
+    user-select: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    #pop {
+        width: 90%;
+        top: calc(20vh + 70px);
+    }
+
+    .casillas input {
+        max-width: 100%;
+    }
+
+    #Listo {
+        width: 100%;
+    }
+}
+
+
+.regis-nov {
+    background-color: white;
+    width: 90%;
+    min-width: 280px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    right: 25%;
+    top: 30%;
+    border-radius: 20px;
+    padding: 25px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 0.5s forwards;
+    border-top: 5px solid #28a745;
+    box-sizing: border-box;
+    position: absolute;
+    /* Cambiado de absolute a relative */
+    z-index: 1;
+}
+
+.regis-nov h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #28a745;
+}
+
+/* Para mejorar aún más en pantallas pequeñas */
+@media screen and (max-width: 600px) {
+    .regis-nov {
+        width: 95%;
+        padding: 20px;
+        margin-top: 60%;
+    }
+}
+
+
+.novedad {
+    max-width: 3rem;
+    width: 100%;
+    border: none;
+    background-color: #ffffff00;
+}
+
+.Equipo {
+    max-width: 8rem;
+    width: 100%;
+    border: none;
+    background-color: #ffffff00;
+}
+
+.fecha {
+    max-width: 10rem;
+    width: 100%;
+    border: none;
+    background-color: #ffffff00;
+}
+
+.tipo {
+    max-width: 8rem;
+    width: 100%;
+    border: none;
+    background-color: #ffffff00;
+}
+
+.estado {
+    max-width: 6rem;
+    width: 100%;
+    border: none;
+    background-color: #ffffff00;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+select,
+textarea,
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(50deg, #28a745, #9DC08B);
+}
+
+.botones {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.edit,
+.refresh,
+.delete {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: #3b3b3b80 0 5px 5px;
+    transition: transform 0.2s ease;
+}
+
+.edit {
+    color: #28a745;
+    border: 1.5px solid #28a745;
+}
+
+.edit:hover {
+    background: linear-gradient(50deg, #28a745, #9DC08B);
+    color: white;
+    transform: scale(1.2);
+}
+
+.refresh {
+    color: rgb(39, 134, 194);
+    border: 1.5px solid rgb(39, 134, 194);
+}
+
+.refresh:hover {
+    background: linear-gradient(50deg, #4ac29a, rgb(39, 134, 194));
+    color: white;
+    transform: scale(1.2);
+}
+
+.delete {
+    color: red;
+    border: 1.5px solid red;
+}
+
+.delete:hover {
+    background: linear-gradient(50deg, tomato, red);
+    color: white;
+    transform: scale(1.2);
+    border: none;
+}
+
+.forminst {
+    background-color: white;
+    width: 30%;
+    max-width: 500px;
+    min-width: 280px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    margin: 40px auto;
+    border-radius: 20px;
+    padding: 25px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 0.5s forwards;
+    border-top: 5px solid #28a745;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+#forminst {
+    margin-top: 10%;
+
+}
+
+.forminst #materiales {
+    width: 100%;
+}
+
+.forminst h2 {
+    text-align: center;
+    margin: 0 0 50px;
+    color: black;
+    font-weight: bolder;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #28a745, #9DC08B) 1;
+    padding-bottom: 10px;
+}
+
+.forminst label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+.forminst input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3b3b3b63;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.forminst input:focus {
+    border-color: #28a745;
+}
+
+.forminst button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #28a745;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.forminst button:hover {
+    filter: brightness(1.1);
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVIDAD */
+@media (max-width: 768px) {
+    .forminst {
+        width: 85%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .forminst h2 {
+        font-size: 1.3rem;
+    }
+
+    .forminst input,
+    .forminst button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .forminst {
+        width: 90%;
+        padding: 15px;
+        margin-top: 30%;
+    }
+
+    .forminst h2 {
+        font-size: 1.1rem;
+    }
+
+    .forminst input,
+    .forminst button {
+        font-size: 0.95rem;
+    }
+}
+#inst {
+    background-color: white;
+    color: #28a745;
+    border: #28a745 2px solid;
+    border-radius: 10px;
+    text-shadow: 1px 1px 1px #7d7d7d;
+    box-shadow: 0 5px 5px #333333a6;
+    margin: auto;
+    width: 25%;
+    min-width: 200px;
+    max-width: 90%;
+    display: block;
+    margin-top: 15%;
+    text-align: center;
+    font-size: 25px;
+    padding: 2px 5px;
+}
+#inst:hover {
+    background: linear-gradient(50deg, #28a745, #9dc08b);
+    color: white;
+    transform: scale(1.1) translateY(-3px);
+    transition: all 0.4s ease;
+}
+
+/*---------FORMULARIO DETALLES DE PRESTAMOS*/
+.formulario {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    animation: fadeIn 0.5s ease-out;
+    border-top: 5px solid #28a745;
+    box-shadow: #333 0 10px 10px;
+    margin-left: 70%;
+    margin-top: 20%;
+}
+
+.formulario h2 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #28a745, #9dc08b) 1;
+    padding-bottom: 10px;
+}
+
+.formulario label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.formulario input:focus {
+    border-color: #28a745;
+}
+
+.formulario button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: linear-gradient(50deg, #28a745, #9DC08B);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.formulario button:hover {
+    filter: brightness(1.1);
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/*----------------------------------------------------*/
+option {
+    border-radius: 5px;
+    border: none;
+
+}
+
+option:nth-child(1):hover {
+    background: linear-gradient(25deg, #28a745, lightgreen);
+    color: white;
+    border-radius: 5px;
+}
+
+option:nth-child(2):hover {
+    background: linear-gradient(25deg, #28a745, #9DC08B);
+    color: white;
+    border-radius: 5px;
+}
+
+option:nth-child(3):hover {
+    background: linear-gradient(25deg, #28a745, #9DC08B);
+    color: white;
+    border-radius: 5px;
+}
+
+option:nth-child(4):hover {
+
+    color: white;
+    border-radius: 5px;
+    background: linear-gradient(25deg, #28a745, #9DC08B);
+}
+
+
+select {
+    background-color: white;
+    border-radius: 10px;
+    padding: 6px;
+    color: #333;
+    margin-bottom: 15%;
+}
+
+select:focus {
+    outline: none;
+    border-color: lightseagreen;
+    box-shadow: 0 10px 10px rgba(32, 178, 171, 0.361);
+    border-radius: 10px;
+}
+
+#formularioprestamosE select {
+    width: 100%;
+    /* Asegura que ocupe todo el ancho disponible */
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* Estilo general para select2 */
+.select2-container--bootstrap-5 .select2-selection {
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+}
+
+/* Mantener consistencia al enfocar */
+.select2-container--bootstrap-5.select2-container--focus .select2-selection {
+    border-color: lightseagreen;
+    box-shadow: 0 0 0 0.2rem rgba(32, 178, 171, 0.25);
+    width: 100%;
+}
+
+/* Dropdown personalizado */
+.scrollable-dropdown {
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+/* Estilo para los inputs dinámicos */
+#inputs-dinamicos label {
+    font-weight: 500;
+    margin-top: 10px;
+    display: block;
+
+
+}
+
+#inputs-dinamicos input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+
+}
+
+#inputs-dinamicos input[type="number"]:focus {
+    outline: none;
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem #9DC08B;
+}
+
+#cerrarmateriales {
+    position: relative;
+    top: 10px;
+    cursor: pointer;
+    margin-left: 90%;
+    font-size: 24px;
+    font-weight: bolder;
+    color: black;
+    text-shadow: 0 5px 5px #333;
+    transition: color 0.3s ease;
+}
+
+#cerrarmateriales:hover {
+    color: brown;
+}
+
+.closebtn {
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+    margin-left: 84%;
+    font-size: 24px;
+    font-weight: bolder;
+    color: black;
+    text-shadow: 0 5px 5px #333;
+    transition: color 0.3s ease;
+}
+
+.closebtn:hover {
+    color: brown;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+dialog button {
+    margin-top: 10px;
+    background-color: #efefef;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+dialog button:hover {
+    filter: brightness(1.1);
+}
+
+.tabla-scroll {
+    max-height: 300px;
+    /* Cambia la altura según necesites */
+    overflow-y: auto;
+    /* Solo scroll vertical */
+    overflow-x: auto;
+    border-radius: 10px;
+    /* Scroll horizontal opcional */
+}
+
+.tabla-scroll table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.scrollable-dialog {
+    max-height: 60vh;
+    /* Limita el alto a 60% del viewport */
+    overflow-y: auto;
+    /* Muestra scroll vertical si hay mucho contenido */
+}
+
+#closebtn {
+    float: right;
+    position: absolute;
+    cursor: pointer;
+    margin-left: 86%;
+    font-size: 24px;
+    font-weight: bolder;
+    color: black;
+    text-shadow: 0 5px 5px #333;
+    transition: color 0.3s ease;
+}
+
+.tabla2 {
+    margin: auto;
+    width: 80%;
+    max-width: 100%;
+    overflow-x: auto;
+    /* permite hacer scroll horizontal si la tabla es muy ancha */
+    box-shadow: #3b3b3b7e 0 10px 10px 10px;
+    border-radius: 30px;
+    display: block;
+    margin-bottom: 3%;
+    margin-top: 6%;
+}
+
+@media (max-width: 650px) {
+    .tabla2 {
+        margin-top: 10%;
+    }
+    #inst {
+        margin-top: 30%;
+        font-size: 20px;
+        width: 80%;
+    }
+}
+
+
+
+/*-----------------------LOADER---------*/
+
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+.contenedor_loader {
+    background-color: white;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    transition: all 1.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Loader principal */
+.loader {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.loader::after {
+    content: '';
+    background-color: #28a745;
+    background-image: url(../img/image.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    animation: girar 0.5s linear infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    /* background-color: rgba(0, 0, 0, 0.05); opcional */
+}
+
+
+/* Sombra debajo */
+.loader::before {
+    content: '';
+    width: 60px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: sombraanimada 0.5s linear infinite;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    border-radius: 50%;
+}
+
+/* Animaciones */
+@keyframes girar {
+    17% {
+        border-bottom-right-radius: 3px;
+    }
+
+    25% {
+        transform: translateY(9px) rotate(22.5deg);
+    }
+
+    50% {
+        transform: scale(1, 0.9) translateY(18px) rotate(45deg);
+        border-bottom-right-radius: 40px;
+    }
+
+    75% {
+        transform: translateY(9px) rotate(67deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(90deg);
+    }
+}
+
+@keyframes sombraanimada {
+    50% {
+        transform: scale(1.3, 1);
+    }
+}
+
+/*------------.----------CARDS ADMIN------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+.container1 {
+    position: relative;
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+    margin-top: 10%;
+}
+
+.container1 .card {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    margin: 30px 15px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: #9DC08B;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.932);
+    backdrop-filter: blur(5px);
+}
+
+.container1 .card .content {
+    padding: 20px;
+    text-align: center;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.container1 .card .content {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.container1 .card .content .icons1 {
+    position: absolute;
+    top: -60px;
+    right: 30px;
+    font-size: 8em;
+    color: #118b1142;
+    pointer-events: none;
+}
+
+.container1 .card .content h3 {
+    font-size: 1.9em;
+    color: #28a745;
+    z-index: 1;
+}
+
+.container1 .card .content p {
+    font-size: 1em;
+    color: #fff;
+    font-weight: 300;
+}
+
+.container1 .card .content a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+
+}
+
+.all {
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    color: #000;
+    padding: 8px 20px;
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+.modal button:hover {
+    filter: brightness(1.1);
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Backdrop del modal */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease forwards;
+    z-index: 1000;
+}
+
+/* Contenedor del modal */
+.modal {
+    background-color: white;
+    width: 30%;
+    max-width: 500px;
+    min-width: 280px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    margin: 40px auto;
+    border-radius: 20px;
+    padding: 25px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 0.5s forwards;
+    border-top: 5px solid #28a745;
+    box-sizing: border-box;
+
+}
+
+.modal p {
+    color: #333;
+    text-shadow: none;
+}
+
+.modal.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    text-shadow: none;
+}
+
+.modal input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3b3b3b63;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+.modal button {
+    width: 30%;
+    padding: 12px;
+    margin-top: 10px;
+    place-content: center;
+    border: none;
+    border-radius: 10px;
+    background: #28a745;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.modal button:hover {
+    filter: brightness(1.1);
+}
+
+footer {
+    background: linear-gradient(50deg, #28a745, #9DC08B);
+    color: white;
+    text-align: center;
+
+    width: 100%;
+    font-size: 0.5rem;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo general de la tabla */
+.table-funcionarios {
+    width: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    background-color: white;
+    border-collapse: collapse;
+}
+
+/* Encabezados */
+.table-funcionarios thead {
+    background-color: #28a745;
+    /* verde SENA */
+    color: white;
+}
+
+/* Filas alternadas */
+.table-funcionarios tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover */
+.table-funcionarios tbody tr:hover {
+    background-color: #d8f0da;
+}
+
+/* Celdas */
+.table-funcionarios td,
+.table-funcionarios th {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Envolver el contenedor */
+.dataTables_filter {
+    height: fit-content;
+    position: relative;
+    float: right;
+
+}
+
+/* Input original de DataTables con tus estilos personalizados */
+.dataTables_filter input {
+    height: 30px;
+    border-style: none;
+    font-size: 18px;
+    outline: none;
+    color: #333;
+    margin-top: 10px;
+}
+
+
+
+/* Al hacer focus (animación de expansión) */
+.dataTables_filter input:focus {
+
+    background-color: transparent;
+
+}
+
+#requisitos {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+#requisitos li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.valido {
+    color: green;
+}
+
+.invalido {
+    color: red;
+}
+
+.vertablabtn {
+    background-color: white;
+    color: #28a745;
+    border: #28a745 2px solid;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px #333333a6;
+    margin: left;
+    width: 10%;
+    min-width: 20px;
+    max-width: 20%;
+    display: block;
+    margin-top: 5%;
+    text-align: center;
+    font-size: 16px;
+    padding: 2px ;
+    cursor: pointer;
+}
+
+.vertablabtn:hover {
+    background: linear-gradient(50deg, #28a745, #9DC08B);
+    color: white;
+    transform: scale(1.1) translateY(-3px);
+    transition: all 0.4s ease;
+}
