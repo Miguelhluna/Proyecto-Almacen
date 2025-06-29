@@ -1,19 +1,33 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+<<<<<<< HEAD
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
+=======
+    font-family: sans-serif;
+  
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 }
 
 body {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     display: grid;
     min-height: 100dvh;
     grid-template-rows: auto;
+=======
+  display: grid;
+    min-height: 100dvh;
+    grid-template-rows:auto ;
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 
 }
 
@@ -27,7 +41,11 @@ header {
     align-items: center;
     padding: 10px 40px;
     position: fixed;
+<<<<<<< HEAD
     z-index: 2;
+=======
+    z-index: 1;
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     margin-bottom: 0;
 }
 
@@ -60,6 +78,7 @@ p {
 }
 
 /* ===== RESPONSIVIDAD ===== */
+<<<<<<< HEAD
 @media (max-width: 771px) {
     header {
         flex-direction: column;
@@ -68,6 +87,14 @@ p {
         text-align: center;
         position: absolute;
 
+=======
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 5px;
+        text-align: center;
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     }
 
     .sena {
@@ -109,7 +136,11 @@ p {
     position: fixed;
     width: 100%;
     background-color: lightgray;
+<<<<<<< HEAD
     z-index: 2;
+=======
+    z-index: 1;
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -137,6 +168,7 @@ p {
     transition: background 0.3s ease;
 }
 
+<<<<<<< HEAD
 .menu .btn-admin {
     text-decoration: none;
     color: #28a745;
@@ -152,14 +184,19 @@ p {
     border-radius: 30px;
 }
 
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 /* Botones dentro del menú */
 .menu button {
     border: none;
     background: none;
     font-weight: bold;
+<<<<<<< HEAD
     padding: 8px 8px;
     border-radius: 5px;
     transition: background 0.3s ease;
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 }
 
 .menu button:hover,
@@ -184,11 +221,19 @@ p {
 }
 
 /* RESPONSIVE: Dropmenu para móviles */
+<<<<<<< HEAD
 @media (max-width: 771px) {
     .dropmenu-toggle {
         visibility: visible;
         color: black;
         margin-top: 8%;
+=======
+@media (max-width: 650px) {
+    .dropmenu-toggle {
+        visibility: visible;
+        color: black;
+        margin-top: 20%;
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     }
 
     .menu {
@@ -220,6 +265,7 @@ p {
     .dropmenu-toggle {
         margin-top: 50%;
     }
+<<<<<<< HEAD
 }
 
 @media (max-width: 350px) {
@@ -229,6 +275,15 @@ p {
 
 }
 
+=======
+}   
+@media  (max-width: 350px) {
+  .menu{
+    margin-top: 10%;
+  }          
+
+}
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 .register1 {
     border-radius: 10px;
     font-size: 25px;
@@ -306,6 +361,7 @@ p {
 }
 
 /* Responsivo extra */
+<<<<<<< HEAD
 @media (max-width: 771px) {
 
     .register1,
@@ -314,16 +370,31 @@ p {
         font-size: 20px;
         width: 50%;
         margin-top: 30%;
+=======
+@media (max-width: 650px) {
+
+    .register1,
+    #register {
+        font-size: 20px;
+        width: 80%;
+        margin-top: 40%;
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     }
 }
 
 @media (max-width: 400px) {
 
     .register1,
+<<<<<<< HEAD
     #register,
     .btnequipos {
         font-size: 18px;
         width: 50%;
+=======
+    #register {
+        font-size: 18px;
+        width: 90%;
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
         margin-top: 65%;
     }
 }
@@ -332,7 +403,11 @@ p {
 /*------Tablas--------*/
 .tabla1 {
     margin: auto;
+<<<<<<< HEAD
     width: 80%;
+=======
+    width: 98%;
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     max-width: 100%;
     overflow-x: auto;
     /* permite hacer scroll horizontal si la tabla es muy ancha */
@@ -341,13 +416,17 @@ p {
     display: block;
     margin-top: 3%;
     margin-bottom: 2%;
+<<<<<<< HEAD
 
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 }
 
 /* Asegurar que las tablas dentro respondan correctamente */
 .tabla1 table {
     width: 100%;
     border-collapse: collapse;
+<<<<<<< HEAD
 
 }
 
@@ -355,6 +434,11 @@ p {
 
 
 
+=======
+}
+
+
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 /* Botón de cerrar */
 .close-btn {
     position: absolute;
@@ -392,7 +476,11 @@ p {
     transform: translateX(-50%);
 }
 
+<<<<<<< HEAD
 .casillas {
+=======
+.casillas input {
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     border-radius: 9px;
     border: 1px solid rgba(63, 62, 62, 0.541);
     padding: 10px;
@@ -477,6 +565,7 @@ p {
     color: #28a745;
 }
 
+<<<<<<< HEAD
 .regis-nov input {
     width: 100%;
     padding: 10px;
@@ -532,12 +621,23 @@ dialog {
         padding: 20px;
         margin-top: 30%;
         left: 10%;
+=======
+/* Para mejorar aún más en pantallas pequeñas */
+@media screen and (max-width: 600px) {
+    .regis-nov {
+        width: 95%;
+        padding: 20px;
+        margin-top: 60%;
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     }
 }
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 .novedad {
     max-width: 3rem;
     width: 100%;
@@ -755,7 +855,11 @@ input[type="submit"]:hover {
 }
 
 /* RESPONSIVIDAD */
+<<<<<<< HEAD
 @media (max-width: 771px) {
+=======
+@media (max-width: 768px) {
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     .forminst {
         width: 85%;
         margin: 20px auto;
@@ -788,7 +892,10 @@ input[type="submit"]:hover {
         font-size: 0.95rem;
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 #inst {
     background-color: white;
     color: #28a745;
@@ -806,7 +913,10 @@ input[type="submit"]:hover {
     font-size: 25px;
     padding: 2px 5px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 #inst:hover {
     background: linear-gradient(50deg, #28a745, #9dc08b);
     color: white;
@@ -925,6 +1035,7 @@ select {
     border-radius: 10px;
     padding: 6px;
     color: #333;
+<<<<<<< HEAD
     margin-bottom: 5%;
 }
 
@@ -933,6 +1044,15 @@ select:focus {
     outline: none;
     border-color: #28a745;
     box-shadow: 0 10px 10px #9DC08B;
+=======
+    margin-bottom: 15%;
+}
+
+select:focus {
+    outline: none;
+    border-color: lightseagreen;
+    box-shadow: 0 10px 10px rgba(32, 178, 171, 0.361);
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     border-radius: 10px;
 }
 
@@ -1101,7 +1221,10 @@ dialog button:hover {
     .tabla2 {
         margin-top: 10%;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     #inst {
         margin-top: 30%;
         font-size: 20px;
@@ -1325,7 +1448,10 @@ dialog button:hover {
     align-items: center;
     animation: fadeIn 0.3s ease forwards;
     z-index: 1000;
+<<<<<<< HEAD
     background: #333333a3;
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 }
 
 /* Contenedor del modal */
@@ -1334,8 +1460,13 @@ dialog button:hover {
     width: 30%;
     max-width: 500px;
     min-width: 280px;
+<<<<<<< HEAD
     box-shadow: 0 15px 25px #333;
     margin: 11% auto;
+=======
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    margin: 40px auto;
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     border-radius: 20px;
     padding: 25px;
     opacity: 0;
@@ -1510,9 +1641,16 @@ footer {
     min-width: 20px;
     max-width: 20%;
     display: block;
+<<<<<<< HEAD
     text-align: center;
     font-size: 16px;
     padding: 2px;
+=======
+    margin-top: 5%;
+    text-align: center;
+    font-size: 16px;
+    padding: 2px ;
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     cursor: pointer;
 }
 
@@ -1521,6 +1659,7 @@ footer {
     color: white;
     transform: scale(1.1) translateY(-3px);
     transition: all 0.4s ease;
+<<<<<<< HEAD
 }
 
 @media (max-width: 1024px) {
@@ -1733,4 +1872,6 @@ footer {
 a{
     text-decoration: none;
     color: inherit;
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 }

@@ -20,7 +20,12 @@ if (isset($_SESSION['rol'])) {
     <title>Almacen Sena</title>
     <link rel="icon" href="img/logoicon.png">
     <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
+<<<<<<< HEAD
 
+=======
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     <!-- ✅ jQuery (debe ir antes de cualquier plugin que lo use) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
@@ -40,10 +45,14 @@ if (isset($_SESSION['rol'])) {
 </head>
 
 <body>
+<<<<<<< HEAD
     <div class="contenedor_loader">
         <div class="loader"></div>
     </div>
 
+=======
+    </div>
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     <div>
         <header>
             <div class="sena">
@@ -56,6 +65,36 @@ if (isset($_SESSION['rol'])) {
     </div>
     <!-----------------------MENU------------------------------------->
     <?php include 'PHP/Navbar.php'; ?>
+<<<<<<< HEAD
+=======
+
+    <!-----------------------------------POPOVER-------------------->
+    <div id="pop">
+        <h2>Editar perfil</h2>
+        <form action="PHP/actualizar.php" method="POST" enctype="multipart/form-data">
+            <div class="profilebtn">
+
+                <input type="file" name="profile" id="img" accept="image/*">
+            </div>
+            <label for="img" id="cambiar"><i class="far fa-edit"></i>Cambiar foto</label>
+            <div class="casillas">
+                <input type="text" name="documento" id="documento" value="<?php echo $_SESSION['documento']; ?>"
+                    readonly>
+                <input name="nuevo_usuario" type="email" placeholder="Nuevo usuario"
+                    value="<?php echo $_SESSION['nombre_usuario']; ?>">
+
+                <input name="nuevo_correo" type="text" placeholder="Correo"
+                    value="<?php echo isset($_SESSION['email']) ? htmlspecialchars($_SESSION['email']) : ''; ?>">
+
+                <input name="nueva_contraseña" type="password" placeholder="Nueva contraseña">
+
+            </div>
+            <input id="Listo" type="submit" value="Listo">
+        </form>
+    </div>
+
+
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     <!-- Botón para abrir el modal -->
     <button class="register1" id="btnprestamos" onclick="mostrarprestamosequipos();">
         <ion-icon name="add-circle-outline"></ion-icon> Prestamos equipos
@@ -130,7 +169,11 @@ if (isset($_SESSION['rol'])) {
 
                 $result = mysqli_query($conexion, $query);
                 while ($row = mysqli_fetch_assoc($result)) {
+<<<<<<< HEAD
                     echo "<tr><form action='PHP/devoluciones.php' method='POST'>";
+=======
+                    echo "<tr> <form action='PHP/devoluciones.php' method='POST'>";
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
                     echo "<td><input class='novedad' type='text' name='id_prestamo' value='" . $row['id_prestamo'] . "'readonly></td>";
                     echo "<td>" . $row['responsable'] . "</td>";
                     echo "<td>" . $row['fecha_prestamo'] . "</td>";
@@ -147,11 +190,19 @@ if (isset($_SESSION['rol'])) {
                             </div>     
                         </td>";
                     echo "</form></tr>";
+<<<<<<< HEAD
 
                     echo "<dialog class='formulario ' id='fila_detalles_" . $row["id_prestamo"] . "'>
                             <span id='closebtn' onclick='cerrarDialog(\"fila_detalles_" . $row["id_prestamo"] . "\")'>&times;</span>
                                     <span  id='contenido_detalles_" . $row["id_prestamo"] . "'>
                                     
+=======
+                    echo "<dialog class='formulario' id='fila_detalles_" . $row["id_prestamo"] . "'>
+                            <span id='closebtn' onclick='cerrarDialog(\"fila_detalles_" . $row["id_prestamo"] . "\")'>&times;</span>
+                                    <span id='contenido_detalles_" . $row["id_prestamo"] . "'>
+                                    
+                                        <!-- Aquí se mostrará la tabla de id_equipo -->
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
                                     </span>
                                 </dialog>";
                 }
@@ -169,7 +220,11 @@ if (isset($_SESSION['rol'])) {
     </button>
     <!--------------------------FORMULARIO MATERIALES------------------------->
     <div id="equipos">
+<<<<<<< HEAD
         <dialog id="formulariomateriales" class="forminst scrollable-dialog" style="display: none;">
+=======
+        <dialog id="formulariomateriales" class="forminst" style="display: none;">
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
             <span class="closebtn" onclick="ocultarprestamosmateriales();">&times;</span>
             <h2>Préstamo de Materiales</h2>
             <form action="PHP/prestamo_materiales.php" method="post">
@@ -232,17 +287,36 @@ if (isset($_SESSION['rol'])) {
                     $query = "SELECT * FROM prestamo_materiales INNER JOIN materiales ON prestamo_materiales.id_material = materiales.id_material ORDER BY fecha_prestamo DESC";
                     $result = mysqli_query($conexion, $query);
                     while ($row = mysqli_fetch_assoc($result)) {
+<<<<<<< HEAD
                         echo "<tr><form action='PHP/devolucionesMateriales.php' method='POST'>";
                         echo "<td><input class='novedad' type='text' name='id_prestamoMaterial' value='" . $row['id_prestamoM'] . "'readonly></td>";
+=======
+                        echo "<tr>";
+                        echo "<td>" . $row['id_prestamoM'] . "</td>";
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
                         echo "<td>" . $row['Descripción'] . "</td>";
                         echo "<td>" . $row['estado_prestamo'] . "</td>";
                         echo "<td>" . $row['Responsable'] . "</td>";
                         echo "<td>" . $row['fecha_prestamo'] . "</td>";
                         echo "<td>" . $row['cantidad'] . "</td>";
+<<<<<<< HEAD
                         echo "<td><div class='botones'>
                                 <button type='submit' class='refresh' title= 'Actualizar'><ion-icon name='refresh-outline'></ion-icon></button>
                                 </div></td>";
                         echo "</form></tr>";
+=======
+                        echo "<td>
+                                        <div class='botones'>
+                                            <button class='refresh' title='Devolver return false;' name='verDevolucion'>
+                                                <ion-icon name='refresh-outline'></ion-icon>
+                                            </button>
+                                            <button class='edit' title='Ver detalles' onclick='mostrarDetalles(" . $row["id_prestamoM"] . "); return false;' name='details'>
+                                                <ion-icon name='information-circle-outline'></ion-icon>
+                                            </button>
+                                        </div>
+                                    </td>";
+                        echo "</tr>";
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
                     }
                     ?>
                 </tbody>
@@ -269,7 +343,11 @@ if (isset($_SESSION['rol'])) {
     }
     ?>
     <script>
+<<<<<<< HEAD
         $(document).ready(function () {
+=======
+        $(document).ready(function() {
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
             // Aplica select2 a todos los campos necesarios
             ['#responsable', '#responsable2', '#materiales'].forEach(id => {
                 $(id).select2({
@@ -281,7 +359,11 @@ if (isset($_SESSION['rol'])) {
         });
 
         // Inputs dinámicos según la cantidad
+<<<<<<< HEAD
         document.getElementById('cantidad').addEventListener('input', function () {
+=======
+        document.getElementById('cantidad').addEventListener('input', function() {
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
             const cantidad = parseInt(this.value);
             const contenedor = document.getElementById('inputs-dinamicos');
             contenedor.innerHTML = '';
@@ -314,7 +396,11 @@ if (isset($_SESSION['rol'])) {
             const xhr = new XMLHttpRequest();
             xhr.open("POST", "PHP/devoluciones.php", true);
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+<<<<<<< HEAD
             xhr.onload = function () {
+=======
+            xhr.onload = function() {
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
                 if (this.status == 200) {
                     document.getElementById("camposEquipos").innerHTML = this.responseText;
                 }
@@ -335,7 +421,11 @@ if (isset($_SESSION['rol'])) {
             xhr.open("POST", "PHP/detalle_equipos.php", true);
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
+<<<<<<< HEAD
             xhr.onload = function () {
+=======
+            xhr.onload = function() {
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
                 if (xhr.status === 200) {
                     contenido.innerHTML = xhr.responseText;
                 } else {
@@ -353,22 +443,38 @@ if (isset($_SESSION['rol'])) {
     </script>
     <!-- Script para el buscador de las tablas -->
     <script>
+<<<<<<< HEAD
         document.getElementById("search").addEventListener("keyup", function () {
             var valor = this.value.toLowerCase();
             var filas = document.querySelectorAll("#table tbody tr");
 
             filas.forEach(function (fila) {
+=======
+        document.getElementById("search").addEventListener("keyup", function() {
+            var valor = this.value.toLowerCase();
+            var filas = document.querySelectorAll("#table tbody tr");
+
+            filas.forEach(function(fila) {
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
                 let texto = fila.innerText.toLowerCase();
                 fila.style.display = texto.includes(valor) ? "" : "none";
             });
         });
     </script>
     <script>
+<<<<<<< HEAD
         document.getElementById("search2").addEventListener("keyup", function () {
             var valor = this.value.toLowerCase();
             var filas = document.querySelectorAll("#table tbody tr");
 
             filas.forEach(function (fila) {
+=======
+        document.getElementById("search2").addEventListener("keyup", function() {
+            var valor = this.value.toLowerCase();
+            var filas = document.querySelectorAll("#table tbody tr");
+
+            filas.forEach(function(fila) {
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
                 let texto = fila.innerText.toLowerCase();
                 fila.style.display = texto.includes(valor) ? "" : "none";
             });
@@ -402,7 +508,11 @@ if (isset($_SESSION['rol'])) {
         }, 60000); // cada 1 minuto
     </script>
     <script>
+<<<<<<< HEAD
         document.addEventListener('DOMContentLoaded', function () {
+=======
+        document.addEventListener('DOMContentLoaded', function() {
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
             const toggle = document.querySelector('.dropmenu-toggle');
             const menuList = document.querySelector('.menu ul');
 
@@ -445,7 +555,11 @@ if (isset($_SESSION['rol'])) {
     <?php endif; ?>
 
     <script>
+<<<<<<< HEAD
         $(document).ready(function () {
+=======
+        $(document).ready(function() {
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
             $('#tableEquipo').DataTable({
                 dom: 'Bfrtip',
                 lengthMenu: [
@@ -454,12 +568,21 @@ if (isset($_SESSION['rol'])) {
                 ],
                 responsive: true,
                 buttons: [{
+<<<<<<< HEAD
                     extend: 'excelHtml5',
                     text: '<i class="fa-solid fa-file-excel"></i> Exportar a Excel',
                     title: 'Lista de equipos prestados',
                     className: 'btn btn-success'
                 },
 
+=======
+                        extend: 'excelHtml5',
+                        text: '<i class="fa-solid fa-file-excel"></i> Exportar a Excel',
+                        title: 'Lista de equipos prestados',
+                        className: 'btn btn-success'
+                    },
+                  
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
                 ],
                 "language": {
                     "lengthMenu": "Mostrar _MENU_ registros por página",
@@ -479,7 +602,11 @@ if (isset($_SESSION['rol'])) {
         });
     </script>
     <script>
+<<<<<<< HEAD
         $(document).ready(function () {
+=======
+        $(document).ready(function() {
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
             $('#tableMaterial').DataTable({
                 dom: 'Bfrtip',
                 lengthMenu: [
@@ -488,11 +615,19 @@ if (isset($_SESSION['rol'])) {
                 ],
                 responsive: true,
                 buttons: [{
+<<<<<<< HEAD
                     extend: 'excelHtml5',
                     text: '<i class="fa-solid fa-file-excel"></i> Exportar a Excel',
                     title: 'Lista de materiales prestados',
                     className: 'btn btn-success'
                 },
+=======
+                        extend: 'excelHtml5',
+                        text: '<i class="fa-solid fa-file-excel"></i> Exportar a Excel',
+                        title: 'Lista de materiales prestados',
+                        className: 'btn btn-success'
+                    },
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 
                 ],
                 "language": {

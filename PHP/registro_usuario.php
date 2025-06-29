@@ -44,6 +44,7 @@ if (mysqli_num_rows($verify_document) > 0) {
     } else {
         $query = "INSERT INTO usuarios (Nombre_completo, documento, email, telefono, Estado_funcionario, fecha_registro, rol) VALUES ('$Nombre', '$Documento', '$Correo', '$Telefono', 'Activo', '$registerDate', '$rol')";
         $eject2 = mysqli_query($conexion, $query);
+<<<<<<< HEAD
         if ($eject2) {
             $_SESSION['mensaje'] = [
                 'tipo' => 'success',
@@ -60,6 +61,10 @@ if (mysqli_num_rows($verify_document) > 0) {
             ];
             header("Location: ../Administrador.php");
             exit();
+=======
+        if (!$eject2) {
+            die("Error en la consulta SQL: " . mysqli_error($conexion));
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
             
         }
     }

@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 session_start();
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 include_once 'Conexion.php';
 
 if (isset($_POST['Updatedocumento'])) {
@@ -41,6 +44,7 @@ if (isset($_POST['Updatedocumento'])) {
                 $_SESSION['rol'] = $fila['rol'];
                 $_SESSION['estado_funcionario'] = $fila['estado_funcionario'];
             }
+<<<<<<< HEAD
             $_SESSION['mensaje'] = [
                 'tipo' => 'success',
                 'titulo' => 'Funcionario actualizado',
@@ -76,4 +80,18 @@ if (isset($_POST['Updatedocumento'])) {
     exit();
 }
 
+=======
+
+            header("Location: ../Administrador.php");
+            exit();
+        } else {
+            echo "Error al actualizar el funcionario: " . mysqli_error($conexion);
+        }
+    } else {
+        echo "No se realizaron cambios.";
+    }
+} else {
+    echo "ID no proporcionado.";
+}
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 ?>

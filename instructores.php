@@ -20,9 +20,17 @@ if (isset($_SESSION['rol'])) {
     <title>Almacen Sena</title>
     <link rel="icon" href="img/logoicon.png">
     <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
+<<<<<<< HEAD
 
     <!-- ✅ jQuery (debe ir antes de cualquier plugin que lo use) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+=======
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- ✅ jQuery (debe ir antes de cualquier plugin que lo use) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     <!-- ✅ DataTables desde Cloudflare (más confiable) -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
@@ -36,7 +44,11 @@ if (isset($_SESSION['rol'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<<<<<<< HEAD
 
+=======
+</head>
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 
 <body>
     <div class="contenedor_loader">
@@ -57,8 +69,36 @@ if (isset($_SESSION['rol'])) {
     <!---------------------------------------MENU------------------------------->
     <?php include_once 'PHP/Navbar.php'; ?>
 
+<<<<<<< HEAD
     <!-----------------------REGISTRAR INSTRUCTORES---------------------------------->
     <button id="inst" onclick="registrarinst();">Registrar instructores</button>
+=======
+    <button id="inst" onclick="registrarinst();">Registrar instructores</button>
+    <!-------------------------------POPOVER-------------------->
+    <div id="pop">
+        <h2>Editar perfil</h2>
+        <form action="PHP/actualizar.php" method="POST" enctype="multipart/form-data">
+            <div class="profilebtn">
+
+                <input type="file" name="profile" id="img" accept="image/*">
+            </div>
+            <label for="img" id="cambiar"><i class="far fa-edit"></i>Cambiar foto</label>
+            <div class="casillas">
+                <input type="text" name="documento" id="documento" value="<?php echo $_SESSION['documento']; ?>"
+                    readonly>
+                <input name="nuevo_usuario" type="text" placeholder="Nuevo usuario"
+                    value="<?php echo $_SESSION['nombre_usuario']; ?>">
+
+                <input name="nuevo_correo" type="email" placeholder="Correo"
+                    value="<?php echo isset($_SESSION['email']) ? htmlspecialchars($_SESSION['email']) : ''; ?>">
+
+                <input name="nueva_contraseña" type="password" placeholder="Nueva contraseña">
+            </div>
+            <input id="Listo" type="submit" value="Listo">
+        </form>
+    </div>
+    <!-----------------------REGISTRAR INSTRUCTORES---------------------------------->
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     <div id="forminst" style="display: none;">
 
 
@@ -86,7 +126,10 @@ if (isset($_SESSION['rol'])) {
             </form>
         </div>
     </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     <!------------------------------TABLA INSTRUCTORES------------------------------->
     <div class="tabla2 container">
         <table id="tablaInstructores" class="table-funcionarios" style="width:100%">
@@ -119,7 +162,11 @@ if (isset($_SESSION['rol'])) {
                         echo "<td>" . $row['fecha_Registro'] . "</td>";
                         echo "<td class='botones'> 
                                 <button class='delete'><ion-icon name='ban-outline'></ion-icon></button></form>
+<<<<<<< HEAD
                                 <button class='edit' onclick='editarinst();'><ion-icon name='create-outline'></ion-icon></button>
+=======
+                                <button class='edit' onclick=editarinst><ion-icon name='create-outline'></ion-icon></button>
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
                                 </td>";
                         echo "</tr>";
                     }
@@ -130,6 +177,7 @@ if (isset($_SESSION['rol'])) {
     </div>
 
     <div id="editarinst" class="modal-backdrop">
+<<<<<<< HEAD
         <div class="modal" id="editarinst">
             <span class="close-btn" onclick="cerrareditarinst();">&times;</span>
 
@@ -137,16 +185,30 @@ if (isset($_SESSION['rol'])) {
             <div>
                 <input type="text" placeholder="Id funcionario" readonly>
             </div>
+=======
+        <div class="modal">
+            <h2>Editar</h2>
+
+            <input type="text" placeholder="Id funcionario" required>
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
             <select>
                 <option value="">Activo</option>
                 <option value="">Inhabilitado</option>
             </select>
+<<<<<<< HEAD
             <input type="text" name="correo" placeholder="Ingrese el nuevo nombre" required>
 
             <input type="email" name="correo" placeholder="Ingrese el nuevo correo">
             <div>
                 <button type="submit" class="btn-editar">Editar</button>
             </div>
+=======
+            <input type="text" name="correo" placeholder="Ingrese el nuevo nombre">
+
+            <input type="email" name="correo" placeholder="Ingrese el nuevo correo">
+            <button>Cambiar</button>
+            <span class="close-btn" onclick="closeModal();">&times;</span>
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
         </div>
     </div>
 
@@ -155,7 +217,10 @@ if (isset($_SESSION['rol'])) {
         <p>&copy; 2025 Todos los derechos reservados</p>
     </footer>
     <!--------------------------------------Scripts---------------------------------------------------->
+<<<<<<< HEAD
     <script src="js/script.js"></script>
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 
     <script>
         if (Notification.permission !== "granted") {
@@ -171,9 +236,13 @@ if (isset($_SESSION['rol'])) {
                 });
             }
         }
+<<<<<<< HEAD
         window.cerrareditarinst = function() {
             document.getElementById("editarinst").style.display = "none";
         };
+=======
+
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
         // Llamada periódica para chequear préstamos
         setInterval(() => {
             fetch('PHP/Verificar_prestamo.php')
@@ -212,9 +281,15 @@ if (isset($_SESSION['rol'])) {
     </script>
 
 
+<<<<<<< HEAD
 
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+=======
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -256,6 +331,7 @@ if (isset($_SESSION['rol'])) {
             });
         });
     </script>
+<<<<<<< HEAD
     <?php
     if (isset($_SESSION['mensaje'])) {
         $mensaje = $_SESSION['mensaje'];
@@ -269,6 +345,8 @@ if (isset($_SESSION['rol'])) {
         unset($_SESSION['mensaje']);
     }
     ?>
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 
 </body>
 

@@ -25,7 +25,10 @@ if (isset($_SESSION['rol'])) {
     $rolUsuario = '';
 }
 ?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,10 +58,13 @@ if (isset($_SESSION['rol'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<<<<<<< HEAD
     <script src="js/script.js"></script>
 
 
 
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 </head>
 
 <body>
@@ -68,9 +74,14 @@ if (isset($_SESSION['rol'])) {
     </div>
 
 
+<<<<<<< HEAD
     <div class="header">
         <header data-step="1"
             data-intro="Bienvenido administrador, usted aqui podra realizar acciones que otros usuarios no, como registrar, consultar y actualizar funcionarios.">
+=======
+    <div>
+        <header>
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
             <div class="sena">
                 <img class="sena" src="img/image.png" alt="SENA" title="SENA">
 
@@ -79,11 +90,14 @@ if (isset($_SESSION['rol'])) {
             <p class="p2">CTGI</p>
         </header>
     </div>
+<<<<<<< HEAD
     <div>
        <button class="boton-rojo"><a href="Cerrar_sesion.php">Cerrar sesión
             <ion-icon name="exit-outline"></ion-icon>
         </a></button>
     </div>
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     <div class="container1">
         <div class="card">
             <div class="content">
@@ -94,6 +108,10 @@ if (isset($_SESSION['rol'])) {
             </div>
         </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
         <div class="card">
             <div class="content">
                 <ion-icon name="id-card-outline" class="icons1"></ion-icon>
@@ -240,6 +258,7 @@ if (isset($_SESSION['rol'])) {
                 contenedor_loader.style.visibility = 'hidden';
             }, 1000); // 2000 milisegundos = 2 segundos
         });
+<<<<<<< HEAD
         window.registrarAll = function() {
             document.getElementById("registrarAll").style.display = "block";
         };
@@ -247,6 +266,14 @@ if (isset($_SESSION['rol'])) {
             document.getElementById("registrarAll").style.display = "none";
         };
 
+=======
+        window.registrarAll = function () {
+            document.getElementById("registrarAll").style.display = "block";
+        };
+        window.cerrarAll = function () {
+            document.getElementById("registrarAll").style.display = "none";
+        };
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
         function openModal1(Updatenombre, Updatedocumento, Updateemail, Updatetelefono) {
             document.getElementById('modalBackdrop').style.display = 'block';
             document.getElementById("Updatenombre").value = Updatenombre;
@@ -276,7 +303,11 @@ if (isset($_SESSION['rol'])) {
     ?>
 
     <script>
+<<<<<<< HEAD
         $(document).ready(function() {
+=======
+        $(document).ready(function () {
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
             $('#miTabla').DataTable({
                 dom: 'Bfrtip',
                 responsive: true,
@@ -285,15 +316,25 @@ if (isset($_SESSION['rol'])) {
                     [5, 10, 25, "Todos"]
                 ],
                 responsive: true,
+<<<<<<< HEAD
                 buttons: [{
+=======
+                buttons: [
+                    {
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
                         extend: 'excelHtml5',
                         text: '<i class="fa-solid fa-file-excel"></i> Exportar a Excel',
                         title: 'Lista de funcionarios',
                         className: 'btn btn-success',
 
                     },
+<<<<<<< HEAD
 
 
+=======
+                
+                
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
                 ],
                 "language": {
                     "lengthMenu": "Mostrar _MENU_ registros por página",

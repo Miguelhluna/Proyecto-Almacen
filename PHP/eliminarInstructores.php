@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 session_start();
+=======
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
 include_once 'Conexion.php';
 
 if (isset($_POST['cedula'])) {
@@ -14,6 +17,7 @@ if (isset($_POST['cedula'])) {
 
         if ($estadoActual === 'Inactivo') {
             $queryActivacion = "UPDATE usuarios SET Estado_funcionario = 'Activo' WHERE documento = '$cedula'";
+<<<<<<< HEAD
             $resultadoActivacion = mysqli_query($conexion, $queryActivacion);
             // Si la actualización fue exitosa, mostrar mensaje de éxito
             if ($resultadoActivacion) {
@@ -55,6 +59,28 @@ if (isset($_POST['cedula'])) {
                 exit;
             }
         }
+=======
+            mysqli_query($conexion, $queryActivacion);
+            echo "<script>
+                    alert('Instructor activado correctamente');
+                    window.location = '../instructores.php';
+                </script>";
+        } else {
+        $query = "UPDATE usuarios SET Estado_funcionario = 'Inactivo' WHERE documento = '$cedula'";
+        $eject = mysqli_query($conexion, $query);
+        if ($eject) {
+            echo "<script>
+                    alert('Instructor eliminado correctamente');
+                    window.location = '../instructores.php';
+                  </script>";
+        } else {
+            echo "<script>
+                    alert('Error al eliminar el instructor');
+                    window.location = '../instructores.php';
+                  </script>";
+        }
+    } 
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     }
 }
 ?>

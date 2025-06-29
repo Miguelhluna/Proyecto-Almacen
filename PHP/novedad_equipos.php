@@ -18,6 +18,7 @@ if (
     // Manejo de archivo
     $archivo = $_FILES['prueba'];
     $nombreArchivo = basename($archivo['name']);
+<<<<<<< HEAD
     if (isset($archivo['tmp_name']) && is_uploaded_file($archivo['tmp_name'])) {
     $tipoArchivo = mime_content_type($archivo['tmp_name']);
 } else {
@@ -30,6 +31,9 @@ if (
     exit();
 }
 
+=======
+    $tipoArchivo = mime_content_type($archivo['tmp_name']);
+>>>>>>> dd7504437f140b0225450237e2c8883a599d978f
     $tamanoArchivo = $archivo['size'];
     $permitidos = ['image/jpeg', 'image/png', 'image/jpg'];
     $rutaDestino = 'IMG/uploads/' . $nombreArchivo;
